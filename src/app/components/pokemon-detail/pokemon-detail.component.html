@@ -1,0 +1,19 @@
+<div *ngIf="pokemon">
+
+    <h2>{{pokemon.name}} Details</h2>
+    <div><span>id: </span>{{pokemon.id}}</div>
+    <button (click)="goBack()">go back</button>
+    
+    <button
+        *ngIf="!isOnList"
+        (click)="add()"
+    >
+        add
+    </button>
+    <button
+        *ngIf="isOnList"
+        (click)="delete()"
+    >
+        delete
+    </button>
+</div>

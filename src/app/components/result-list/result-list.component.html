@@ -1,0 +1,13 @@
+<ul class="pokemons">
+    <li *ngFor="let pokemon of showPokemons">
+        <a routerLink="/detail/{{pokemon.id}}">
+            <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
+        </a>
+    </li>
+    <button
+    *ngIf="!isAllShowed"
+    (click)="showMove()"
+    >
+        show more
+    </button>
+</ul>

@@ -1,0 +1,23 @@
+<h2>Pokemons</h2>
+<div>
+    <button (click)="toggleShowAll()">show all the pokemons</button>
+    <app-result-list
+        *ngIf="showAll"
+        [resultList]="pokemons"
+    ></app-result-list>
+</div>
+
+
+<div>
+    <label>name:
+        <input #keyWord placeholder="search for ..." />
+    </label>
+    <button (click)="searchKeyWord(keyWord.value)">submit</button>
+    <p *ngIf="keyWordResultList">search for {{ keyWord.value }}</p>
+    <p *ngIf="keyWordResultList">result list have {{ keyWordResultList.length }} items</p>
+    <app-result-list
+        *ngIf="keyWordResultList"
+        [resultList]="keyWordResultList"
+    ></app-result-list>
+</div>
+
